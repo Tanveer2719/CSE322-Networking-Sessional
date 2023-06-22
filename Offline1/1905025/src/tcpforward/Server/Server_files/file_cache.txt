@@ -1,4 +1,0 @@
-f1>hello.txt>a>Public>5059>src/tcpforward/Server/Clients/a/Public/hello.txt
-f2>ns.txt>b>Public>5059>src/tcpforward/Server/Clients/b/Public/ns.txt
-f3>hi.txt>b>Public>5059>src/tcpforward/Server/Clients/b/Public/hi.txt
-f4>a.txt>a>Private>5059>src/tcpforward/Server/Clients/a/Private/a.txt

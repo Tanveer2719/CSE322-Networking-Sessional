@@ -42,16 +42,15 @@ public class Server {
     }
     
     private void createServerFiles() throws IOException {
+
         String dir = "src/tcpforward/Server/Server_files/";
-        File file1 = new File(dir+"client_cache.txt");
-        File file2 = new File(dir+"file_cache.txt");
-        File file3 = new File(dir+"fileReq_cache.txt");
-        if(! file1.exists() || !file2.exists() || !file3.exists()){
-            file1.createNewFile();
-            file2.createNewFile();
-            file3.createNewFile();
-        }
-        Helper.readAllUsers();         // read users from the file 
+        File f=new File(dir);
+        f.mkdirs();
+        new File(dir+"client_cache.txt").createNewFile();
+        new File(dir+"file_cache.txt").createNewFile();
+        new File(dir+"fileReq_cache.txt").createNewFile();
+        
+        Helper.readAllUsers();         // read users from the file   
     }
 
     // add to client_cache.txt

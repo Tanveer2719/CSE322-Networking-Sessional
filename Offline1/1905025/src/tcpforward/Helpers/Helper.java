@@ -49,12 +49,23 @@ public class Helper {
  
     private static void readFilecount() {
         try{
-            BufferedReader br = new BufferedReader(new FileReader("src/tcpforward/Server/Server_files/file_count.txt"));
-            String line = br.readLine();
-            br.close();
-            String[] parts = line.split(">");
-            fileCount = Integer.valueOf(parts[0]);
-            reqCount = Integer.valueOf(parts[1]);
+
+            File file = new File("src/tcpforward/Server/Server_files/file_count.txt");
+            if(! file.exists()){
+                file.createNewFile();
+                System.out.println("file_count.txt created");
+                reqCount = 0;
+                fileCount = 0;
+            }else{
+                BufferedReader br = new BufferedReader(new FileReader("src/tcpforward/Server/Server_files/file_count.txt"));
+                String line = br.readLine();
+                br.close();
+                String[] parts = line.split(">");
+                fileCount = Integer.valueOf(parts[0]);
+                reqCount = Integer.valueOf(parts[1]);
+            }
+            
+            
         }catch(Exception e){
             System.out.println("Error in readFilecount " + e);
         }
@@ -234,11 +245,11 @@ public class Helper {
         return flag;
     }
 
-    public static void sendMessageToRequester(String user, String reqID) {
+    public static void sendMessageToRequester(String user, String reqID, String filename) {
         for(String s: userReqMap.keySet()){
             if(userReqMap.get(s).contains(reqID)){
                 String dir = "src/tcpforward/Server/Clients/"+ s+"/Inbox/Messages.txt";
-                write(dir, "file uploaded by user "+ user + " for your request ID: "+ reqID);
+                write(dir, "file named as '"+ filename+"' uploaded by user '"+ user + "' for your request ID: "+ reqID);
             }
         }
 

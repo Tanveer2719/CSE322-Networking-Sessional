@@ -71,7 +71,7 @@ public class Message implements Serializable {
         text += "2. Look up the uploaded files\n";
         text += "3. Look up files of other users\n";
         text += "4. Make a file request\n";
-        text += "5. Read Messages\n";
+        text += "5. Read Unread Messages\n";
         text += "6. Upload a file\n";
         text += "7. Upload requested file\n";
         text += "8. Download a file\n";
@@ -87,7 +87,7 @@ public class Message implements Serializable {
     }
 
     private String readFromFile(){
-        String txt = "List of All Users: \n";
+        String txt = "List of All Previous Users: \n";
         for(String s: Helper.alltimeUsers){
             txt+= s;
             txt+="\n";

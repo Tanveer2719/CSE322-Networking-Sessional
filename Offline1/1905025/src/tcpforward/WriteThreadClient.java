@@ -84,6 +84,7 @@ public class WriteThreadClient implements Runnable {
                 
                 else if(s.getHeader().equalsIgnoreCase("UPLOAD_FILE")){
                     System.out.println(s.getText());
+/************** Need to change the directory for another file upload **************************/
                     String dir = "src/tcpforward/Files/NewStudent.txt";
                     FileInputStream fis = new FileInputStream(dir);
                     fileUploadBlockingQueue = readClient.setBQ();

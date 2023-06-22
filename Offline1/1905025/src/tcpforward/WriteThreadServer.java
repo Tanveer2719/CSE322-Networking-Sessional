@@ -193,7 +193,7 @@ public class WriteThreadServer implements Runnable{
                         Helper.writeToFileCache(mess.getFileId());
                         
                         if(mess.getReqId() != null){
-                            Helper.sendMessageToRequester(mess.getFrom(), mess.getReqId());
+                            Helper.sendMessageToRequester(mess.getFrom(), mess.getReqId(), f.filename);
                         }
                     }else{
                         handleError(mess);
