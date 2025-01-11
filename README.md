@@ -80,4 +80,6 @@ The **CSE-322: Computer Networks Sessional** course involves several hands-on as
 
 ---
 
-For further questions, please contact.
+For further questions, keep it to yourself. I have long forgotten what I had done in this course.
+
+ 
